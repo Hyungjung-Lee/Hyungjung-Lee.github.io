@@ -1,7 +1,6 @@
 ---
 title: "Welcome!"
 date: 2019-03-04 22:34:28 +0900
-categories: jekyll update
 excerpt: "Welcom"
 header:
   overlay_image: /assets/images/wallpaper.jpg
