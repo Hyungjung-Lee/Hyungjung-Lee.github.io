@@ -23,7 +23,7 @@ description              : "My blog."
 url                      : "https://Hyungjung-Lee.github.io"
 baseurl                  : ""
 repository               : "Hyungjung-Lee/Hyungjung-Lee.github.io"
-teaser                   : "/assets/images/avatar.png"
+teaser                   : "/assets/images/avatar.jpeg"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
@@ -107,7 +107,7 @@ analytics:
 # Site Author
 author:
   name             : "Hyungjung Lee"
-  avatar           : "/assets/images/avatar.png"
+  avatar           : "/assets/images/avatar.jpeg"
   bio              : "normal programmer."
   location         : "bundang-gu seongnam-si gyeonggi-do korea"
   email            :
