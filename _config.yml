@@ -24,8 +24,8 @@ url                      : "https://Hyungjung-Lee.github.io"
 baseurl                  : ""
 repository               : "Hyungjung-Lee/Hyungjung-Lee.github.io"
 teaser                   : "/assets/images/avatar.jpeg"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+logo                     : "/assets/images/avatar.jpeg"
+masthead_title           : "test"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -98,7 +98,7 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google"
   google:
     tracking_id          :
     anonymize_ip         : # true, false (default)
