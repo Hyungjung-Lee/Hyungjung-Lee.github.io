@@ -208,7 +208,7 @@ const Counter = enhance(({ counter, setCounter }) =>
 ## Hook
 * * *
 
-3rd parth 라이브러리인 recompose의 장점을 정식 react기능으로 편입한 형태입니다.
+3rd party 라이브러리인 recompose의 장점을 정식 react기능으로 편입한 형태입니다.
 
 functional component에 useState를 이용하여 state 처리가 가능하게 되었고,
 useEffect를 작성하여 특정 props가 변경되었을때 랜더 처리를 할 수 있게 되었습니다.
