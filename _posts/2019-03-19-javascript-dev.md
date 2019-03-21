@@ -117,43 +117,75 @@ ajax를 통해 비동기 네트워크 작성할때, 리퀘스트가 조금만 �
 es6 에서 promise라는 개념의 등장과 es8의 await, async의 등장으로 c#의 코루틴과 같은 형태의 비동기 코드를 작성할 수 있게 되었습니다.
 
 ```
-var promise1 = new Promise(function(resolve, reject) {
-  setTimeout(function() {
-    resolve('foo');
-  }, 300);
-});
+//es5의 콜백지옥
 
-promise1.then(function(value) {
-  console.log(value);
-  // expected output: "foo"
-});
+setTimeout(function (name) {
+  var catList = name + ',';
+
+  setTimeout(function (name) {
+    catList += name + ',';
+
+    setTimeout(function (name) {
+      catList += name + ',';
+
+      setTimeout(function (name) {
+        catList += name + ',';
+
+        setTimeout(function (name) {
+          catList += name;
+
+          console.log(catList);
+        }, 1, 'Lion');
+      }, 1, 'Snow Leopard');
+    }, 1, 'Lynx');
+  }, 1, 'Jaguar');
+}, 1, 'Panther');
 ```
 
+
 ```
-//es5
-jQuery.ajax({
-    url: 'https://api.example.com/endpoint',
-    success: function(response) {
-        // This is your callback.
-    },
-    async: false // And this is a terrible idea
+//프로미스 생성
+const promise1 = function(param){
+  return new Promise(function(resolve,reject){
+    if(param){
+      resolve("성공");
+    }
+    else{
+      reject("실패");
+    }
+  });
+}
+
+//프로미스 실행
+promise1(true).then(function(result){
+  console.log(result) ;//성공
+},function(err){
+  console.log(err); //실패
 });
 
+
+//실제 작업의 예
+getData(actionId)
+  .then(renderAction);
+  .catch(handleError);
+  .finally(clearAction);
+```
+
+es8에 등장한 async는 promise를 리턴하는 함수입니다.
+스레드 프로그래밍의 join처럼 await를 이용하여 비동기 리퀘스트를 컨트롤 할 수 있습니다.
+```
 //es7~8
 async function loadData() {
     // `rp` is a request-promise function.
     var promise1 = rp('https://api.example.com/endpoint1');
     var promise2 = rp('https://api.example.com/endpoint2');
-   
-    // Currently, both requests are fired, concurrently and
-    // now we'll have to wait for them to finish
+
     var response1 = await promise1;
     var response2 = await promise2;
     return response1 + ' ' + response2;
 }
-// Since, we're not in an `async function` anymore
-// we have to use `then`.
-loadData().then(() => console.log('Done'));
+
+loadData().then((result) => console.log(result));
 ```
 
 ## NPM
