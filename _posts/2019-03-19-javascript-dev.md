@@ -1,14 +1,14 @@
 ---
 title: "Javascript Dev Overview"
-date: 2019-03-04 22:34:28 +0900
+date: 2019-03-25 22:34:28 +0900
 excerpt: "Javascript Dev Overview"
 header:
   overlay_image: /assets/images/wallpaper.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: programing javascript
-tags: javascript webpack
+tags: javascript
 ---
-Javascript Dev Overview
+Javascript Dev Overview (1)
 =============
 
 ## Overview
@@ -33,7 +33,7 @@ Javascript Dev Overview
 
 이러한 문법 상의 통합을 위해 ECMAScript를 명명하고 표준화, 개선 움직임이 시작됩니다.
 그리고 2015년 HTML5의 등장과 ECMAscript6의 발표로 큰 변화를 맞이하게 됩니다.
-아래는 ECMAScript6 부터 추가된 문법 중 중요하다 생각한 문법을 정리해봤습니다.
+아래는 ECMAScript6 부터 추가된 문법 중 중요하다 생각한 부분을 정리해봤습니다.
 
 #let, const
 
@@ -43,9 +43,10 @@ var, let은 변수선언 키워드 이므로 리터럴 값의 재할당이 가�
 
 var는 global scope가 될 수도 있고, function scope 가 될 수 있는 변수타입 입니다.
 중복 선언도 허용하기 때문에 코드량이 많아질 수록 문제가 생길 수 있습니다.
+게다가 중복 선언 된 변수는 이전 변수와 타입(int 나 string)이 완전히 다를 수 있습니다.
+따라서 var는 코드가 방대할수록 혼동되기 쉽습니다.
 반면에 let과 const는 block scope이고 중복 또한 허용되지 않습니다.
 때문에 let과 const로 변수를 사용 하는 것이 추천됩니다.
-
 
 #Destructuring Assignment
 
@@ -53,7 +54,7 @@ var는 global scope가 될 수도 있고, function scope 가 될 수 있는 변�
 ECMA6 부터는 한 줄에 선언이 가능합니다.
 
 ```
-
+//변수 선언
 var obj = {
   body : {
     name : 'name',
@@ -142,6 +143,11 @@ setTimeout(function (name) {
 }, 1, 'Panther');
 ```
 
+여러 언어에서 공통적으로 생기는 문제인 콜백지옥에서 벗어나기위해,
+자바진영의 RxJava , c# unity진영의 UniRx에서 익숙한 then 패턴이 javascript에도 존재합니다.
+resolve함수와 reject함수를 통해, 비동기 함수의 진행분기를 결정합니다.
+성공한 비동기 결과는 then, 실패한 비동기 결과는 catch를 통해 전달됩니다.
+비동기 작업 완료후에는 성공/실패 여부와 관계없이 finally가 호출됩니다.
 
 ```
 //프로미스 생성
@@ -188,19 +194,6 @@ async function loadData() {
 loadData().then((result) => console.log(result));
 ```
 
-## NPM
-* * *
-
-NPM은 Node Pakcage Manager의 약자입니다. 이름 그대로 javascript package를 관리합니다.
-c#의 nuget, java의 maven 과 gradle과 같은 역할을 한다고 생각하시면 됩니다.
-package run 등의 기능 역시 담당하기 때문에 특히 gradle과 유사하다고 볼 수 있습니다.
-
-## Webpack
-* * *
-
-번들러
-
-## Babel
-* * *
-
-하위 호환 라이브러리
+## Next
+지금까지 자바스크립트의 큰 문법 변화에 대해 간단히 알아보았습니다.
+다음 포스팅에서는 개발환경의 큰 변화의 한 부분인 NPM에 대해 알아보겠습니다.
