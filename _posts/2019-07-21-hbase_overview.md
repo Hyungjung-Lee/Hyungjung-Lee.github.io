@@ -48,11 +48,15 @@ hbase는 [HDFS(Hadoop Distributed File System)](https://hadoop.apache.org/docs/r
 구조는 위와 같은 형태로 저장됩니다.
 
 #MMaster
+* * *
+
 HMaster는 Region을 region 서버에 할당합니다. 즉 Region 서버들에 퍼저있는 region들의 로드밸런싱을 수행합니다.
 
 또한 테이블 생성, column family 생성과 같은 DDL(Dasta Definition Language)를 담당합니다.
 
 #Zookeeper
+* * *
+
 [zookeeper](https://zookeeper.apache.org/)는 hbase와 마찬가지로 아파치 재단의 오픈소스 프로젝트로 설정 정보를 관리, 분산처리를 동기화합니다.
 
 클라이언트는 region과 통신하려면 반드시 zookeeper를 통과해야합니다.
@@ -60,6 +64,7 @@ HMaster는 Region을 region 서버에 할당합니다. 즉 Region 서버들에 �
 따라서 hbase 를 이용하려면 zookeeper가 반드시 필요합니다.
 
 #Resions Server
+* * *
 
 클라이언트와 통신을하고 데이터 연산을 처리합니다.
 
