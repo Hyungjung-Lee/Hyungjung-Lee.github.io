@@ -8,7 +8,7 @@ header:
 categories: programing machine-learning
 tags: machine-learning
 ---
-None linear model
+None linear model & Kernel Function
 =============
 
 ## Overview
@@ -78,38 +78,34 @@ None linear model
 ![non-linear](/assets/images/nonlinear.png)
 
 
-## Kernel Trick Method
+## Kernel Trick
 
 [동영상](https://youtu.be/3liCbRZPrZA).
 
-저차원 공간에서 선형 분리 안되는 데이터들을, 고차원 공간에 매핑시켜서 선형 분리되도록 할 수가 있는데, 이렇게 하려면 저차원->고차원 매핑 함수가 필요하다.
-
- 예를 들어, a=(0,0), b=(1,1) 이라는 2차원 점들이 있다고 하자. 이를 3차원 공간으로 매핑시키기 위해서,
-M(x) = (x1^2, 루트2 * x1*x2, x2^2)  라는 매핑함수를 정의했다고 하자.
-
-
- 그러면 a=(0,0) --> a=(0,0,0)
-           b=(0,0,0) --> b=(1, 루트2, 1) 라는 3차원 공간 좌표로 매핑된다.
-
-
- 여기서 M(x): L -> H  (저차원에서 고차원으로 매핑시켜주는 매핑 함수) 가 된다.
-
- 이 상태에서 다시 커널 함수의 정의를 살펴보면,,
-
+저차원 공간에서 선형 분리 안되는 데이터들을 고차원 공간에 매핑시켜서 선형 분리되도록 할 수가 있습니다. 이러한 방식을 커널 트릭이라 합니다.
+커널 트릭을 위해서는 저차원->고차원 매핑 함수가 필요합니다.
+예를 들어, a=(0,0), b=(1,1) 이라는 2차원 점들이 있다고 하고. 이를 3차원 공간으로 매핑시키기 위해서, M(x) = (x1^2, 루트2 * x1*x2, x2^2)  라는 매핑함수를 정의합니다.
+그러면 a=(0,0) --> a=(0,0,0) b=(0,0,0) --> b=(1, 루트2, 1) 라는 3차원 공간 좌표로 맵핑됩니다.
+여기서 M(x): L -> H  (저차원에서 고차원으로 매핑시켜주는 매핑 함수) 가 됩니다.
+이 상태에서 커널 함수의 정의를 살펴보면,
  . L (저차원) 공간 상의 두 벡터 x, y 가 있다고 할 때,
    커널 함수 K(x, y) = M(x) * M(y) 를 만족하는 매핑함수 M(.) 가 존재해야 한다. 
    즉, 커널 함수의 값과 H 공간 상으로 매핑된 두점 M(x), M(y) 의 내적이 같아야 한다.
 
- 즉, 여기서 말하는 커널 함수란,, 
-    1. K(x, y) = M(x) * M(y) 를 만족하는 매핑함수가 존재할 때. K 를 커널 함수라고 부른다!!!
+ 즉, 여기서 말하는 커널 함수란 K(x, y) = M(x) * M(y) 를 만족하는 매핑함수가 존재할 때. K 를 말합니다.
 
-- 위와 같은 형태의 커널 함수 종류는 다음과 같습니다.
+위와 같은 형태의 커널 함수 종류는 다음과 같습니다.
   - 다항식 커널
   - RBF (Radial Basis Function) 커널
   - 하이퍼볼릭 탄젠트 커널
 
+![이미지](/assets/images/kernel1.png)
+
 ## SVM
 
+Support Vector Machine(SVM)은 커널 트릭을 이용한 분석 방법입니다. 원 훈련(또는 학습)데이터를 비선형 매핑(Mapping)을 통해 고차원으로 변환합니다. 이 새로운 차원에서 초평면(hyperplane)을 최적으로 분리하는 선형분리를 찾습니다. 즉, 최적의 Decision Boundary(의사결정 영역)를 찾는 방식입니다.
+
+SVM은 복잡한 비선형 의사결정 영역을 모형화 할 수 있기 때문에 매우 정확하며, 다른 모델들 보다 Over Fitting되는 경향이 적다고합니다.
 
 ```
 """
@@ -156,10 +152,72 @@ plt.axis([-3, 3, -3, 3])
 plt.show()
 ```
 
+![이미지](/assets/images/Figure_1.png)
 
 ## Decision Tree
 
+의사결정 규칙(rule)을 나무구조로 도표화하여 분류(classification)와 예측(prediction)을 수행하는 분석방법입니다.
+이 방법은 분류 또는 예측이 나무구조에 의한 추론규칙(induction rule)에 의해서 표현되기 때문에 다른 방법들(예, 신경망분석, 판별분석, 회귀분석 등)에 비해 그 과정을 쉽게 이해하고 설명할 수 있습니다.
 
+### 의사결정나무의 형성과정
+
+- 이산형 변수의 경우
+  - 카이제곱 통계량의 p-값 (p-value of Chi Square statistic)
+  - 지니 지수(Gini index)
+  - 엔트로피 지수(Entropy index)
+- 연속형 변수의 경우
+  - 평균과 표준편차를 이용하여 분리
+
+
+```
+from sklearn.tree import DecisionTreeClassifier, export_graphviz
+from sklearn.datasets import load_breast_cancer
+from sklearn.cross_validation import train_test_split
+#Dot to png
+import pydot
+
+#온라인 시각화
+#https://dreampuf.github.io/GraphvizOnline
+
+#샘플 데이터 로드(유방암 데이터 세트)
+cancer = load_breast_cancer()
+
+#훈련, 테스트 데이터 셔플
+X_train, X_test, y_train, y_test = train_test_split(
+cancer.data, cancer.target, stratify=cancer.target, random_state=42)
+
+#의사결정 트리 선언
+dTreeAll = DecisionTreeClassifier(random_state=0)
+
+#훈련 (모든 리프 노드 사용)
+dTreeAll.fit(X_train, y_train)
+
+#점수 출력
+print("Train Set Score1 : {:.2f}".format(dTreeAll.score(X_train, y_train)))
+print("Test  Set Score1 : {:.2f}".format(dTreeAll.score(X_test, y_test)))
+
+#의사결정 트리 선언(트리 깊이 제한)
+dTreeLimit = DecisionTreeClassifier(max_depth=3, random_state=0)
+
+#훈련 (가지치기 : 리프노드 깊이 제한)
+dTreeLimit.fit(X_train, y_train)
+
+#점수 출력
+print("Train Set Score2 : {:.2f}".format(dTreeLimit.score(X_train, y_train)))
+print("Test  Set Score2 : {:.2f}".format(dTreeLimit.score(X_test, y_test)))
+
+
+export_graphviz(dTreeLimit, out_file="dicisionTree1.dot", class_names=["malignant","benign"],
+                feature_names=cancer.feature_names, impurity=False, filled=True)
+
+#Encoding 중요
+(graph,) = pydot.graph_from_dot_file('dicisionTree1.dot', encoding='utf8')
+
+#Dot 파일을 Png 이미지로 저장
+graph.write_png('dicisionTree1.png')
+```
+
+![이미지](/assets/images/dicisionTree1.png)
 
 ## reference
 
@@ -168,3 +226,5 @@ https://ko.wikipedia.org/wiki/%EC%A7%80%EB%8F%84_%ED%95%99%EC%8A%B5
 https://blog.naver.com/PostView.nhn?blogId=vnf3751&logNo=220831047843&proxyReferer=https%3A%2F%2Fwww.google.com%2F
 
 https://scikit-learn.org/stable/modules/svm.html
+
+https://excelsior-cjh.tistory.com/66
