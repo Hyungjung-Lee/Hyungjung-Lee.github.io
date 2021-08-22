@@ -3,16 +3,14 @@ title: "Database Primary"
 date: 2021-08-21 21:53:00 +0900
 excerpt: "Database Primary"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
-categories: study database khk
-tags: khk database
+categories: study database khk kdk
+tags: khk kdk database
 ---
 Database Primary Index
 =============
 
-## Overview
-* * *
 ### RDBMS
 Relational Database Management System 으로 RDB(Relation Database)를 관리하기 위한 소프트웨어이다. RDB는 관계형 데이터 모델에 기초를 둔 데이터베이스로서 2차원 테이블의 형태를 갖는다.
 "관계형" 데이터라는 표현은 데이터 테이블 간의 상호관련성 상관관계를 나타낸다. 테이블은 행 (row), 열(column) 으로 되어있고, 각 행은 레코드(record)로 정의한다. 이러한 테이블의 집합을 RDB라고 하며, RDB의 설계도를 ER(Entity Relationship)이라고한다.
