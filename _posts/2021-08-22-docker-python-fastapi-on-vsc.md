@@ -27,7 +27,7 @@ docker run -d --name mycontainer -p 8000:8000 myimage
 docker push lhj5772/myimage:latest
 
 ### FastAPI
-[Docker 공식 홈페이지](https://fastapi.tiangolo.com/deployment/docker/)
+[FastAPI 공식 홈페이지](https://fastapi.tiangolo.com/deployment/docker/)
 
 
 ### 참고
