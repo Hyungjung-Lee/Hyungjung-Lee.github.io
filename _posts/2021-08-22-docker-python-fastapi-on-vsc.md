@@ -22,7 +22,7 @@ Python FastAPI를 Docker 환경위에서 구동하도록 Visual Studio Code를 �
 #### Docker Build
 docker build -t myimage .    
 #### Docker Run
-docker run -d --name mycontainer -p 80:80 myimage
+docker run -d --name mycontainer -p 8000:8000 myimage
 #### Docker Push
 docker push lhj5772/myimage:latest
 
