@@ -29,7 +29,9 @@ Data Engineering Overview
 
 #### Document Base Database
 - MongoDB
+  
 #### Hadoop Echo System
+
 - HDFS
 - Hbase
 - Hive
