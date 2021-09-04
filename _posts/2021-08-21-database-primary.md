@@ -30,6 +30,21 @@ RDBMS는 RDB의 레코드들을 삽입, 탐색, 수정, 삭제하는 소프트�
 
 ACID를 유지하기 위해 RDBMS에서는 테이블, record를 lock 하는 것에 의존한다. NoSQL에서는 별도의 복사본을 관리하는 MVCC(multiversion concurrency control, 다중 버전 동시성제어) 방식을 사용한다.
 
+#### Feature
+
+- Database
+- Table
+- Index
+  - Clustered Index
+  - Secondary Index (Non-clustered index)
+- Transaction
+- View
+- Stored Procedure
+
+#### SQL의 실행과정
+
+![Architecture](/assets/images/sql_excute.png)
+
 ### NoSQL
 No SQL은  RDBMS 와 다른 형태를 나타내는 데이터베이스다(최근에는 데이터베이스의 한 종류를 지칭하지 않고 더 많은 것을 의미한다. 그래서 Not only SQL이라고도 한다).  고정적인 2차원 테이블외에 다른 형태의 데이터도 지원하며 대표적으로 json format과 graph format을 지원한다. 그래서 table이 아닌 document라는 명칭을 사용하기도 한다.
 RDBMS와 다르게 테이블간의 관계성이 비교적 모호하며 엄격하게 데이터간의 관계를 유지하지 않기때문에 유연성, 확장성, 고성능을 추구하기 위해 사용한다.
