@@ -1,6 +1,6 @@
 ---
 title: "js-class-closure"
-date: 2021-09-22 21:53:00 +0900
+date: 2021-10-01 21:53:00 +0900
 excerpt: "js-class-closure"
 header:
   overlay_image: /assets/images/wallpaper.jpg
