@@ -11,7 +11,7 @@ tags: kdk khk jhg cws study
 Data Pipeline
 =============
 
-서비스에서 발생하는 Data가 어떤 과정을 통해 전달 되는지에 대해 설명합니다.
+서비스에서 발생하는 Data가 어떤 과정을 통해 전달 되는지에 대해 설명합니다. 현강현강
 
 ![Datapipeline](/assets/images/datapipeline_overview.png)
 
