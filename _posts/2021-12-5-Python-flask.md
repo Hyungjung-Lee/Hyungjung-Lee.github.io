@@ -73,4 +73,6 @@ if __name__ == '__main__':
 
 위 구문을 통해 위에서 생성한 app 객체를 `run()`함수를 통해 호출합니다. 이때 `debug=True` 값을 parameter로 사용하여 코드가 변경 되면 app의 동작을 변경하는 기능을 사용하게 됩니다.
 
+이제 웹 브라우저에 127.0.0.1:5000으로 접근하면 아래와 같이 웹페이지에 `Hello, World` 가 노출 되게 됩니다.
+
 ![git](/assets/images/flask_hello_world.png)
