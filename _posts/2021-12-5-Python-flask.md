@@ -76,3 +76,82 @@ if __name__ == '__main__':
 이제 웹 브라우저에 127.0.0.1:5000으로 접근하면 아래와 같이 웹페이지에 `Hello, World` 가 노출 되게 됩니다.
 
 ![git](/assets/images/flask_hello_world.png)
+
+
+## get, post 요청만들기
+
+flask는 요청의 method를 `@app.route`의 methods에 설정을 추가할 수 있습니다.
+
+```
+from flask import Flask, request, jsonify
+app = Flask(__name__)
+@app.route('/')
+@app.route('/get', methods=['GET'])
+def get():
+    order = request.args.get('order_by')
+    return 'Hello, World! GET'
+@app.route('/post', methods=['POST'])
+def post():
+    data = request.json
+    return jsonify(data)
+@app.route('/put', methods=['PUT'])
+def put():
+    return 'Hello, World! PUT'
+@app.route('/delete', methods=['DELETE'])
+def delete():
+    return 'Hello, World! DELETE'
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)
+```
+
+
+위에서 간단한 http 요청(http request)을 사용해봤습니다. 
+
+이러한 http 요청은 크게 3가지로 구분됩니다.
+
+- start line
+- headers
+- body
+
+### start line 
+
+- HTTP Method
+해당 request가 의도한 action을 정의하는 부분입니다.
+HTTP Methods에는 GET, POST, PUT, DELETE, OPTIONS 등등이 있습니다.
+주로 GET 과 POST가 쓰입니다.
+
+- Request target
+해당 request가 전송되는 목표 uri 입니다.
+예를 들어 www.naver.com/login 이 있겠습니다.
+- HTTP Version
+말 그대로 사용되는 HTTP 버젼입니다. 버젼에는 1.0, 1.1, 2.0 등이 있습니다. 버전 별로 큰 차이가 있습니다.
+
+```
+GET www.naver.com/search HTTP/1.1
+```
+
+### Headers
+
+해당 request에 대한 추가 정보(addtional information)를 담고 있는 부분입니다.
+request 메세지 body의 총 길이 (Content-Length), contents의 type등을 header에 넣습니다. 
+header의 구조는 Key : Value 형태로 사용됩니다.
+
+Header의 예시입니다.
+
+```
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Type: application/json
+Content-Length: 257
+Host: google.com
+User-Agent: HTTPie/0.9.3
+```
+
+### Body
+
+Request의 실제 내용입니다. GET의 경우에는 Body가 없습니다.
+
+
+웹서버를 만드는 개발자, 웹 요청(API request)를 사용자는 method에 맞춰서 요청의 동작을 추측할 수 있습니다.
+
