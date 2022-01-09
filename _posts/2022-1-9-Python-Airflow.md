@@ -1,6 +1,6 @@
 ---
 title: "python airflow"
-date: 2021-1-9 21:53:00 +0900
+date: 2022-1-9 21:53:00 +0900
 excerpt: "python mysql"
 header:
   overlay_image: /assets/images/wallpaper.jpg
@@ -58,7 +58,7 @@ Scheduler, Metadata DB, Web Server, Worker, Executor (Broker) 가 실행 됩니�
 
 ## Dag
 
-DAG(Directed Acyclic Graph, 비순환 방향 그래프)는 Python으로 작성되며 각 배치 스케쥴을 관리합니다.
+DAG(Directed Acyclic Graph, 비순환 방향 그래프)는 Python으로 작성되며 각 배치 스케쥴을 관리합니다. [설명](https://berrrrr.github.io/programming/2020/01/12/what-is-apache-airflow/)
 DAG하위에는 고유한 여러 Task가 존재하며 순서를 갖습니다.
 Task는 BashOperator, PythonOperator 등 다양한 Operator를 지원합니다. Data Engineer는 용도에 맞는 Operator를 작성하여 Task에 재사용할 수 있습니다.
 
