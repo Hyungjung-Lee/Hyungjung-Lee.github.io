@@ -6,9 +6,9 @@ header:
   overlay_image: /assets/images/wallpaper.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: python
-tags: python study mongo
+tags: python study mongo airflow
 ---
-Airflow에서 MongoDB 사용하기
+# Airflow에서 MongoDB 사용하기
 
 Airflow 에서 MongoDB를 사용하기 위한 방법에 대해서 알아봅니다.
 
