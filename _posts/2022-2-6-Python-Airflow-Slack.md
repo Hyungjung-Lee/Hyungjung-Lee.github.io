@@ -1,5 +1,5 @@
 ---
-title: "Airflow 에서 Mongodb 사용하기"
+title: "Airflow 에서 Slack 사용하기"
 date: 2022-2-6 12:15:00 +0900
 excerpt: "python slack"
 header:
