@@ -168,13 +168,6 @@ mac : https://kubernetes.io/ko/docs/tasks/tools/install-kubectl-macos/
 
 window : https://arisu1000.tistory.com/27824
 
-## Lens 설치
-
-쿠버네티스를 쉽게 사용할 수 있게 도와주는 툴입니다. 
-
-https://k8slens.dev/
-
-
 ## 접근 확인
 
 gcloud auth login
@@ -184,6 +177,12 @@ gcloud config set project jandbox
 gcloud container clusters get-credentials jandbox-dev --project jandbox
 
 kubectl config use-context gke_jandbox_asia-east1-a_jandbox-dev
+
+## Lens 설치
+
+쿠버네티스를 쉽게 사용할 수 있게 도와주는 툴입니다. 
+
+https://k8slens.dev/
 
 # Reference
 
