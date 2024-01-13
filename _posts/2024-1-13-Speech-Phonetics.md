@@ -1,7 +1,7 @@
 ---
-title: "Speech"
+title: "Speech-Phonetics"
 date: 2024-1-13 12:15:00 +0900
-excerpt: "ASR"
+excerpt: "Acoustic Phonetics"
 header:
   overlay_image: /assets/images/wallpaper.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
@@ -10,7 +10,7 @@ tags: ai/ml study
 use_math: true
 classes: wide
 ---
-# Automatic Speech Recognition
+# Acoustic Phonetics
 ***
 
 ## Overview
