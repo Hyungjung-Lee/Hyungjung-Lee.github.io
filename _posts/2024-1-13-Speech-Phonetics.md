@@ -58,7 +58,7 @@ classes: wide
 
 ![git](/assets/images/Anti-Aliasing.png)
 
-![git](/assets/images/bandpass-filter.png)
+![git](/assets/images/bandpass-filter.jpeg)
 
 1. Anti-aliasing 필터는 샘플링 전에 아날로그 신호에 적용되어 나이퀴스트 주파수보다 높은 주파수 성분을 제거함으로써 샘플링에 의한 왜곡(aliasing)을 방지.
 2. 이상적인 bandpass 필터는 주파수 도메인에서 사각형이지만, 현실에서는 시간 도메인의 길이 제한으로 인해 transition band를 가진 필터 모양을 사용.
@@ -69,8 +69,6 @@ classes: wide
 ![git](/assets/images/mu-law.png)
 
 ![git](/assets/images/sign-function.png)
-
-[양자화 예시](https://stackoverflow.com/questions/50085735/python-u-law-mulaw-wave-decompression-to-raw-wave-signal)
 
 ```python
 def uLaw_d(i8bit):
@@ -164,3 +162,4 @@ decoded:    263     |   107 :   0000000100000111
 
 [ratsgo's speech book](https://ratsgo.github.io/speechbook/docs/).
 [음운과 음소의 차이](https://learnkoreanwithoh.tistory.com/entry/%EC%9D%8C%EC%9A%B4%EA%B3%BC-%EC%9D%8C%EC%86%8C%EC%9D%98-%EC%B0%A8%EC%9D%B4).
+[양자화 예시](https://stackoverflow.com/questions/50085735/python-u-law-mulaw-wave-decompression-to-raw-wave-signal)
