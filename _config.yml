@@ -23,7 +23,7 @@ description              : "My blog."
 url                      : "https://Hyungjung-Lee.github.io"
 baseurl                  : ""
 repository               : "Hyungjung-Lee/Hyungjung-Lee.github.io"
-teaser                   : "/assets/images/avatar.jpeg"
+teaser                   : "/assets/images/wallpaper.jpg"
 logo                     : #"/assets/images/avatar.jpeg"
 masthead_title           : "TBD"
 # breadcrumbs            : false # true, false (default)
@@ -109,8 +109,8 @@ author:
   name             : "Hyungjung Lee"
   avatar           : "/assets/images/avatar.jpeg"
   bio              : "programmer."
-  location         : "bundang-gu seongnam-si gyeonggi-do korea"
-  email            :
+  location         : "gyeonggi do, south korea"
+  email            : "lhj5772@me.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
