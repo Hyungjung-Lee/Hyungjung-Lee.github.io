@@ -103,8 +103,123 @@ def DFT(x):
     return np.dot(W, x)
 ```
 
+## MFCCs
+
+Mel-Frequency Cepstral Coefficients(MFCC)는 음성 인식과 관련해 불필요한 정보는 버리고 중요한 특질만 남긴 피처(feature)이다.
+
+deterministic 한 추출 방법
+
+![git](/assets/images/mfcc_1.png)
+
+- Frame : 대개 25ms 내외로 잘게 만든 것.
+- spectrum : 프레임 각각에 푸리에 변환(Fourier Transform)을 실시해 해당 구간 음성(frame)에 담긴 주파수(frequency) 정보를 추출 
+- Mel Filter Bank : 스펙트럼에 사람의 말소리 인식에 민감한 주파수 영역대는 세밀하게 보고 나머지 영역대는 상대적으로 덜 촘촘히 분석하는 필터
+- log-Mel Spectrum : 로그를 취한 것
+- MFCC: log-Mel Spectrum 에 역푸리에변환(Inverse Fourier Transform)을 적용해 주파수 도메인의 정보를 새로운 시간(time) 도메인으로 바꾼 것 
+  - MFCC는 기존 음성 인식 시스템에서 가우시안 믹스처 모델(Gaussian Mixture Model)의 입력으로 쓰임
+
+```python
+import scipy.io.wavfile
+sample_rate, signal = scipy.io.wavfile.read('example.wav')
+```
+
+```bash
+>>> sample_rate
+16000
+>>> signal
+array([36, 37, 60, ...,  7,  9,  8], dtype=int16)
+>>> len(signal)
+183280
+>>> len(signal) / sample_rate
+11.455
+```
+
+```python
+signal = signal[0:int(3.5 * sample_rate)]
+```
+
+### Preemphasis
+
+고주파 성분의 에너지를 올려주는 전처리 과정
+
+- 상대적으로 에너지가 적은 고주파 성분을 강화함으로써 원시 음성 신호가 전체 주파수 영역대에서 비교적 고른 에너지 분포를 갖도록 함.
+- 푸리에 변환시 발생할 수 있는 numerical problem 예방.
+- Signal-to-Noise Ratio(SNR) 개선.
+
+first-order high-pass filter 라고 하며 수식은 아래와 같다.
+
+$$
+y_t = x_t - \alpha x_{t-1}
+$$
+
+즉, 고역을 약하게 하는 방법
+
+α 는 보통 0.95나 0.97을 사용
+
+### Framing
+
+- MFCC 생성 과정에서는 변화가 빠른 원시 음성 신호를 분석하기 위해 푸리에 변환을 사용하여 주파수 정보를 추출. 
+- 음성 신호가 시간에 따라 일정하다고 가정할 수 있는 짧은 시간 단위로 신호를 쪼개는 과정을 'framing'이라 하며, 이는 일반적으로 25ms 길이로 진행. 
+- Framing 시에는 프레임들이 일부 겹치도록 하여(frame_stride=10ms), 연속성을 유지하고 정보 손실을 방지.
+
+```python
+frame_size = 0.025
+frame_stride = 0.01
+frame_length, frame_step = frame_size * sample_rate, frame_stride * sample_rate
+signal_length = len(emphasized_signal)
+frame_length = int(round(frame_length))
+frame_step = int(round(frame_step))
+# frame_step만큼 이동시키면서 몇 개의 프레임으로 나눌 수 있는지 계산. np.ceil은 나눗셈의 결과가 소수점이 나오면 올림하여 프레임 수가 부족하지 않게 함
+num_frames = int(np.ceil(float(np.abs(signal_length - frame_length)) / frame_step))
+# 패딩은 마지막 프레임이 frame_length만큼의 데이터를 갖도록 하기 위해 추가
+pad_signal_length = num_frames * frame_step + frame_length
+# 필요한 길이만큼 0으로 채운 배열을 생성하고, np.append를 사용하여 원본 신호 끝에 추가
+z = np.zeros((pad_signal_length - signal_length))
+pad_signal = np.append(emphasized_signal, z)
+# 배열을 반복하여 타일처럼 확장 각 인덱스 추출
+# 인덱스 범위가 0~399인데 두번째 프레임에 관련된 범위는 160~559임을 확인할 수 있다. 이전 프레임과 다음 프레임이 서로 겹친다
+indices = np.tile(np.arange(0, frame_length), (num_frames, 1)) + \
+          np.tile(np.arange(0, num_frames * frame_step, frame_step), (frame_length, 1)).T
+frames = pad_signal[indices.astype(np.int32, copy=False)]
+```
+
+원시 음성을 짧은 구간(25ms)으로 자르되 일부 구간(10ms)은 겹치게 처리한 것
+
+### Windowing
+
+![git](/assets/images/windows.png)
+
+- Windowing은 프레임에 특정 함수를 적용하여 경계를 부드럽게 만드는 기법. 
+- 해밍 윈도우는 이러한 함수 중 하나로, 중간은 원래 신호를 유지하고 양 끝을 감소시켜 신호의 급격한 변화를 완화. 
+- 프레임의 양 끝에서 신호가 갑자기 0이 되는 것을 방지하고, 푸리에 변환 시 발생할 수 있는 불필요한 고주파 성분을 줄여주어, 변환된 신호의 품질을 향상.
+
+### Magnitude
+
+- MFCC를 구할 때는 음성 인식에 불필요한 위상 정보는 없애고 진폭 정보만을 남긴다. 
+- 진폭(magnitude) : 이 주파수 성분의 크기 
+- 위상(phase): 위상은 해당 주파수의 (복소평면상 단위원상)위치
+
+복소수 입력(a+b×j)에 대해  √a2+b2 를 리턴
+
+```python
+mag_frames = np.absolute(dft_frames)
+```
+
+### Power Spectrum
+
+### Filter Banks
+
+### Log-Mel Spectrum
+
+### MFCCs
+
+### Post Processing
+
+
 ## Reference
 
 [ratsgo's speech book](https://ratsgo.github.io/speechbook/docs/).
+
+[푸리에 트랜스폼 Fourier Transform 직관적 이해](https://young-ni.tistory.com/entry/%ED%91%B8%EB%A6%AC%EC%97%90-%ED%8A%B8%EB%9E%9C%EC%8A%A4%ED%8F%BC-Fourier-Transform)
 
 
