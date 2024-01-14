@@ -40,7 +40,7 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "dark" (default), "dark"
   utterances:
-    theme                : github-light
+    theme                : github-dark
     issue_term           : "pathname"
 staticman:
   allowedFields          : # ['name', 'email', 'url', 'message']
