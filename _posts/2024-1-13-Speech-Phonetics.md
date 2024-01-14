@@ -3,7 +3,7 @@ title: "Speech-Phonetics"
 date: 2024-1-13 12:15:00 +0900
 excerpt: "Acoustic Phonetics"
 header:
-  teaser: /assets/images/my-wallpaper_1.png
+  teaser: /assets/images/wallpaper_1.png
   overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: ai-ml
