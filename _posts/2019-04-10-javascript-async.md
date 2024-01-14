@@ -3,7 +3,7 @@ title: "Javascript async control"
 date: 2019-04-10 23:00:00 +0900
 excerpt: "Javascript async control"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: programing javascript
 tags: javascript async

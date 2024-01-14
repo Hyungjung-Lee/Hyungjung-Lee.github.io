@@ -3,7 +3,7 @@ title: "Javascript babel"
 date: 2019-04-17 12:00:00 +0900
 excerpt: "Javascript babel"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: programing javascript
 tags: javascript babel

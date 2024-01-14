@@ -3,7 +3,7 @@ title: "Database ERD"
 date: 2021-09-11 21:53:00 +0900
 excerpt: "Database ERD"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: study database khk kdk
 tags: khk kdk database

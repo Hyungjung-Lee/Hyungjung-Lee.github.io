@@ -3,7 +3,7 @@ title: "Airflow 에서 Slack 사용하기"
 date: 2022-2-6 12:15:00 +0900
 excerpt: "python slack"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: python
 tags: python study slack airflow

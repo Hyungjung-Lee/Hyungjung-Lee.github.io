@@ -3,7 +3,7 @@ title: "Supervised learning & None linear model"
 date: 2019-09-22 07:30:00 +0900
 excerpt: "Supervised learning & None linear model"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: programing machine-learning
 tags: machine-learning

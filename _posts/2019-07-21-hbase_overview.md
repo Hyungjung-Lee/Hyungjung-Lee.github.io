@@ -3,7 +3,7 @@ title: "Hbase Overview"
 date: 2019-07-21 15:51:00 +0900
 excerpt: "Hbase Overview"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: programing hbase
 tags: database hbase

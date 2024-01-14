@@ -3,7 +3,7 @@ title: "Data Pipeline"
 date: 2021-08-22 09:00:00 +0900
 excerpt: "Data Pipeline"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: study 
 tags: kdk khk jhg cws study

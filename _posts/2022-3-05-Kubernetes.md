@@ -3,7 +3,7 @@ title: "Kubernetes"
 date: 2022-2-13 12:15:00 +0900
 excerpt: "Kubernetes"
 header:
-  overlay_image: /assets/images/wallpaper.png
+  overlay_image: /assets/images/wallpaper_2.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: server
 tags: server study
