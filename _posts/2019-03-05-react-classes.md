@@ -3,7 +3,7 @@ title: "React Component Types"
 date: 2019-03-04 22:34:28 +0900
 excerpt: "Introduce Hook"
 header:
-  overlay_image: /assets/images/wallpaper.jpg
+  overlay_image: /assets/images/wallpaper.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: programing react
 tags: react class hook

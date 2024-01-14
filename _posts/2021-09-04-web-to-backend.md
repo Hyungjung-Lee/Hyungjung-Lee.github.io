@@ -3,7 +3,7 @@ title: "Web To Backend"
 date: 2021-09-04 09:00:00 +0900
 excerpt: "Web To Backend"
 header:
-  overlay_image: /assets/images/wallpaper.jpg
+  overlay_image: /assets/images/wallpaper.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: study 
 tags: study javascript web

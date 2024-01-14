@@ -3,7 +3,7 @@ title: "Deep Learning"
 date: 2021-12-25 21:53:00 +0900
 excerpt: "deeplearning keras"
 header:
-  overlay_image: /assets/images/wallpaper.jpg
+  overlay_image: /assets/images/wallpaper.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: deeplearning
 tags: deeplearning keras

@@ -3,7 +3,7 @@ title: "Javascript Dev Overview"
 date: 2019-03-25 22:34:28 +0900
 excerpt: "Javascript Dev Overview"
 header:
-  overlay_image: /assets/images/wallpaper.jpg
+  overlay_image: /assets/images/wallpaper.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: programing javascript
 tags: javascript

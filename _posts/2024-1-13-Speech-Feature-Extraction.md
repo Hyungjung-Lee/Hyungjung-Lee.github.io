@@ -3,7 +3,7 @@ title: "Speech-Feature-Extraction"
 date: 2024-1-13 12:15:00 +0900
 excerpt: "Feature Extraction"
 header:
-  overlay_image: /assets/images/wallpaper.jpg
+  overlay_image: /assets/images/wallpaper.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: ai-ml
 tags: ai-ml study

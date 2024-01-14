@@ -3,7 +3,7 @@ title: "Docker X Python X FastAPI 환경 Visual Studio Code로 작업하기"
 date: 2021-08-22 09:00:00 +0900
 excerpt: "Docker X Python X FastAPI 환경 Visual Studio Code로 작업하기"
 header:
-  overlay_image: /assets/images/wallpaper.jpg
+  overlay_image: /assets/images/wallpaper.png
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
 categories: study service kdk
 tags: kdk service

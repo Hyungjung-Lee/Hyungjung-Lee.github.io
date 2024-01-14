@@ -23,9 +23,9 @@ description              : "My blog."
 url                      : "https://Hyungjung-Lee.github.io"
 baseurl                  : ""
 repository               : "Hyungjung-Lee/Hyungjung-Lee.github.io"
-teaser                   : "/assets/images/wallpaper.jpg"
+teaser                   : "/assets/images/wallpaper.png"
 logo                     : #"/assets/images/avatar.jpeg"
-masthead_title           : "TBD"
+masthead_title           : "Hello World!"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
