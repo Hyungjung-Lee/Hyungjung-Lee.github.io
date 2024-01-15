@@ -24,7 +24,7 @@ url                      : "https://Hyungjung-Lee.github.io"
 baseurl                  : ""
 repository               : "Hyungjung-Lee/Hyungjung-Lee.github.io"
 teaser                   : "/assets/images/wallpaper_1.png"
-logo                     : "/assets/images/me.png"
+logo                     : #"/assets/images/me.png"
 masthead_title           : "Hello World!"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
