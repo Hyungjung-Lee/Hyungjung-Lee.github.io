@@ -202,13 +202,15 @@ $$
 \xi_t(i, j) = \frac{P(q_t = i, q_{t+1} = j, \mathbf{O} \mid \lambda)}{P(\mathbf{O} \mid \lambda)}
 $$
 
+`전이`할 확률
+
 $$
 \xi_t(i, j) = \frac{P(q_t = i, q_{t+1} = j, \mathbf{O} \mid \lambda)}{P(\mathbf{O} \mid \lambda)} = \frac{\alpha_t(i) \times a_{ij} \times b_j(o_{t+1}) \times \beta_{t+1}(j)}{\sum_{s=1}^{n} \alpha_t(s) \times \beta_t(s)}
 $$
 
-`전이`할 확률
 
 분모 : 모든 `상태`가 될 확률 
+
 분자 : 특정 `상태`가 될 확률
 
 $$
