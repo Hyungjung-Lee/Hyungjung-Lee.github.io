@@ -15,7 +15,7 @@ classes: wide
 
 ## Intro
 
-[automatic-speech-recognition-asr-introduction](https://web.stanford.edu/class/cs224s/syllabus/#week-4-course-project--automatic-speech-recognition-asr-introduction
+[stanford asr-introduction](https://web.stanford.edu/class/cs224s/syllabus/#week-4-course-project--automatic-speech-recognition-asr-introduction
 ) 과 [ratsgo's HMM](https://ratsgo.github.io/machine%20learning/2017/03/18/HMMs/) 을 보고 재작성
 
 
