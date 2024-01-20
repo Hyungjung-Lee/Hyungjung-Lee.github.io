@@ -239,3 +239,7 @@ $$
 E-step에서 구한 γ 와 ζ를 바탕으로 모델 파라메터 𝐴, 𝐵를 업데이트
 
 ![git](/assets/images/hmm/pseudo.png)
+
+### Programming
+
+[ratsgo's HMM](https://ratsgo.github.io/machine%20learning/2017/10/14/computeHMMs/) 참고
