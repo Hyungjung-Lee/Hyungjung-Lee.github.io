@@ -227,3 +227,21 @@ followed by max-pooling to squash the sequence of outputs from the recurrent lay
 - End to End를 사전학습을 통해 구축
 
 ## Code
+
+Pre-Train : [https://github.com/lorenlugosch/end-to-end-SLU/blob/master/models.py#L170](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L186)
+
+Sinc Net: [https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L186](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L186)
+
+두 모델을 연결 : [https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L831](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L831)
+
+decode 이후 결과 출력 : [https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L868](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L868)
+
+train : [https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/training.py#L65](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/training.py#L65)
+
+phone loss : [https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L312](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L312)
+
+intent loss : [https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L817](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L817)
+
+### Improvement
+
+Attention Version : [https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L721](https://github.com/lorenlugosch/end-to-end-SLU/blob/e94bd479de1a82663c38363979309089acebcd36/models.py#L721)
