@@ -193,6 +193,12 @@ FastSpeech에서 1D convolution과 Sequence-level Knowledge Distillation 효과 
 - 병렬로 mel-spectrogram을 생성하는 새로운 피드-포워드 네트워크를 포함
 - 음성 품질 면에서 autoregressive Transformer TTS 모델에 거의 맞먹고, mel-spectrogram 생성을 270배, end-to-end 음성 합성을 38배 가속화하며, 단어 건너뛰기와 반복 문제를 거의 해결하고, 음성 속도를 원활하게 조절할 수 있다.
 
-## reference
 
+## Code
+
+
+
+## reference
+[FastSpeech](https://arxiv.org/abs/1905.09263)
+[git](https://github.com/Deepest-Project/FastSpeech)
 [feVeRin](https://randomsampling.tistory.com/39#google_vignette)
