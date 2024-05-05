@@ -196,7 +196,13 @@ FastSpeech에서 1D convolution과 Sequence-level Knowledge Distillation 효과 
 
 ## Code
 
+[MODEL](https://github.com/Deepest-Project/FastSpeech/blob/64d07b0c81080ad13a1b83b519cbec8bf0ec0405/modules/model.py#L74)
 
+[Duration](https://github.com/Deepest-Project/FastSpeech/blob/64d07b0c81080ad13a1b83b519cbec8bf0ec0405/modules/model.py#L45)
+
+[align2duration](https://github.com/Deepest-Project/FastSpeech/blob/64d07b0c81080ad13a1b83b519cbec8bf0ec0405/modules/model.py#L176C9-L176C23)
+
+[CBAD](https://github.com/Deepest-Project/FastSpeech/blob/64d07b0c81080ad13a1b83b519cbec8bf0ec0405/modules/model.py#L9)
 
 ## reference
 [FastSpeech](https://arxiv.org/abs/1905.09263)
